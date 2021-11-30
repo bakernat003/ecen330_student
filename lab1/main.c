@@ -25,9 +25,13 @@ int main() {
   display_setCursor(CURSOR_X, CURSOR_Y); // The upper left of the LCD screen.
   display_setTextColor(DISPLAY_RED);     // Make the text red.
   display_setTextSize(TEXT_SIZE);        // Make the text a little larger.
-  display_println("hello world (on the LCD)!"); // This actually prints the
-                                                // string to the LCD.
-  printf("hello world!\n");                     // This prints on the console.
+  display_drawLine(0, 0, 700, 500, DISPLAY_GREEN);
+  display_drawCircle(70, 120, 25, DISPLAY_RED);
+  display_fillCircle(250, 120, 25, DISPLAY_RED);
+  display_setCursor(display_height(), 0);
+  display_drawLine(0, display_height(), display_width(), 0, DISPLAY_GREEN);
+  display_fillTriangle(165, 100, 135, 40, 195, 40, DISPLAY_YELLOW);
+  display_drawTriangle(165, 130, 135, 190, 195, 190, DISPLAY_YELLOW);
   return 0;
 }
 

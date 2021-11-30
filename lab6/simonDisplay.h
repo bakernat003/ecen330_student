@@ -19,14 +19,26 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 #define SIMON_DISPLAY_BUTTON_WIDTH 60
 #define SIMON_DISPLAY_BUTTON_HEIGHT 60
 
-// WIdth, height of the simon "squares.
+// Width, height of the simon "squares.
 // Note that the video shows the squares as larger but you
 // can use this smaller value to make the game easier to implement speed-wise.
 #define SIMON_DISPLAY_SQUARE_WIDTH 120
 #define SIMON_DISPLAY_SQUARE_HEIGHT 120
 
-// Given coordinates from the touch pad, computes the region number.
+// These are the definitions for the regions.
+#define SIMON_DISPLAY_REGION_0 0
+#define SIMON_DISPLAY_REGION_1 1
+#define SIMON_DISPLAY_REGION_2 2
+#define SIMON_DISPLAY_REGION_3 3
 
+// Number of touchable regions.
+#define SIMON_DISPLAY_REGION_COUNT 4
+
+// Passed to simonDisplay_drawButton to indicate drawing or erasing
+#define SIMON_DISPLAY_DRAW 0
+#define SIMON_DISPLAY_ERASE 1
+
+// Given coordinates from the touch pad, computes the region number.
 // The entire touch-screen is divided into 4 rectangular regions, numbered 0
 // - 3. Each region will be drawn with a different color. Colored buttons remind
 // the user which square is associated with each color. When you press
@@ -43,20 +55,6 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 |  (BLUE)  |  (GREEN) |
 -----------------------
 */
-
-// These are the definitions for the regions.
-#define SIMON_DISPLAY_REGION_0 0
-#define SIMON_DISPLAY_REGION_1 1
-#define SIMON_DISPLAY_REGION_2 2
-#define SIMON_DISPLAY_REGION_3 3
-
-// Number of touchable regions.
-#define SIMON_DISPLAY_REGION_COUNT 4
-
-// Passed to simonDisplay_drawButton to indicate drawing or erasing
-#define SIMON_DISPLAY_DRAW 0
-#define SIMON_DISPLAY_ERASE 1
-
 int8_t simonDisplay_computeRegionNumber(int16_t x, int16_t y);
 
 // Draws a colored "button" that the user can touch.

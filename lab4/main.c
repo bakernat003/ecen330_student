@@ -29,7 +29,7 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 // Uncomment one of the following lines to run Milestone 1 or 2      ///////////
 ////////////////////////////////////////////////////////////////////////////////
 // #define RUN_PROGRAM MILESTONE_1
-// #define RUN_PROGRAM MILESTONE_2
+#define RUN_PROGRAM MILESTONE_2
 
 // If nothing is uncommented above, run milestone 2
 #ifndef RUN_PROGRAM
@@ -57,6 +57,7 @@ uint32_t isr_functionCallCount = 0;
 
 // This main uses isr_function() to invoked clockControl_tick().
 int main() {
+
 #if (RUN_PROGRAM == MILESTONE_1)
   printf(RUN_DISPLAY_TEST_MSG);
   clockDisplay_runTest();

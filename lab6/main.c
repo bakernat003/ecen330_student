@@ -36,10 +36,10 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 ////////////////////////////////////////////////////////////////////////////////
 // Uncomment one of the following lines to run Milestone 1, 2, 3, or 4    //////
 ////////////////////////////////////////////////////////////////////////////////
-// #define RUN_PROGRAM MILESTONE_1
-// #define RUN_PROGRAM MILESTONE_2
-// #define RUN_PROGRAM MILESTONE_3
-// #define RUN_PROGRAM MILESTONE_4
+//#define RUN_PROGRAM MILESTONE_1
+//#define RUN_PROGRAM MILESTONE_2
+//#define RUN_PROGRAM MILESTONE_3
+#define RUN_PROGRAM MILESTONE_4
 
 // If nothing is uncommented above, run milestone 4
 #ifndef RUN_PROGRAM
@@ -141,9 +141,9 @@ int main() {
       personalInterruptCount++;
       tickAll();
       interrupts_isrFlagGlobal = 0;
-      if (personalInterruptCount >= MAX_INTERRUPT_COUNT)
+      /*if (personalInterruptCount >= MAX_INTERRUPT_COUNT)
         break;
-      utils_sleep();
+      utils_sleep();*/
     }
   }
   interrupts_disableArmInts();
